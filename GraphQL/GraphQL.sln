@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29123.89
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL", "GraphQL\GraphQL.csproj", "{0602E8B7-D1D6-4DC9-A786-87ABD288D7C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL", "GraphQL\GraphQL.csproj", "{0602E8B7-D1D6-4DC9-A786-87ABD288D7C0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.Data", "GraphQL.Data\GraphQL.Data.csproj", "{B9C58A83-956D-4F7C-B8CA-632ABB018320}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Shared", "GraphQL.Shared\GraphQL.Shared.csproj", "{FFF305F3-FB00-441F-A750-D0A1B6CEDA86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0602E8B7-D1D6-4DC9-A786-87ABD288D7C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0602E8B7-D1D6-4DC9-A786-87ABD288D7C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0602E8B7-D1D6-4DC9-A786-87ABD288D7C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9C58A83-956D-4F7C-B8CA-632ABB018320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9C58A83-956D-4F7C-B8CA-632ABB018320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9C58A83-956D-4F7C-B8CA-632ABB018320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9C58A83-956D-4F7C-B8CA-632ABB018320}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFF305F3-FB00-441F-A750-D0A1B6CEDA86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFF305F3-FB00-441F-A750-D0A1B6CEDA86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFF305F3-FB00-441F-A750-D0A1B6CEDA86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFF305F3-FB00-441F-A750-D0A1B6CEDA86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
