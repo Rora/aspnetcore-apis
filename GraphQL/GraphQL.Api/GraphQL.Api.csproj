@@ -8,5 +8,4 @@
     <ProjectReference Include="..\GraphQL.Data\GraphQL.Data.csproj" />
     <ProjectReference Include="..\GraphQL.Shared\GraphQL.Shared.csproj" />
   </ItemGroup>
-
 </Project>
