@@ -10,6 +10,7 @@ namespace GraphQL.Data.Hosting
 {
     public static class ServiceCollectionExtensions
     {
+#pragma warning disable IDE0067 // Dispose objects before losing scope, is disposed at the end
         public static IServiceCollection AddMyData(this IServiceCollection services)
         {
             //Use an open connection instead of a connection string, 
@@ -22,5 +23,6 @@ namespace GraphQL.Data.Hosting
                 .AddTransient<OrderRepository>()
                 .AddDbContext<MyDbContext>(o => o.UseSqlite(conn));
         }
+#pragma warning restore IDE0067 // Dispose objects before losing scope
     }
 }
