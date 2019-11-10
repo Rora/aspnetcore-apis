@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="0.1.22-pre2" />
-    <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="0.0.3-alpha.106" />
+    <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.13" />
   </ItemGroup>
 
   <ItemGroup>
