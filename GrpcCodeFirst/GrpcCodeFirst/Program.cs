@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Hosting;
 
 namespace GrpcCodeFirst
@@ -20,6 +21,11 @@ namespace GrpcCodeFirst
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.ConfigureKestrel(o =>
+                    {
+                        o.ListenAnyIP(5001, o => o.Protocols = HttpProtocols.Http2); //http2 listener for grpc
+                        o.ListenAnyIP(5002, o => o.Protocols = HttpProtocols.Http1); //use a seperate http1 listener for the grpcwebproxy
+                    });
                 });
     }
 }
