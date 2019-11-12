@@ -1,9 +1,12 @@
+using BlazorGrpcCodeFirst.Server.Services;
+using Knowit.Grpc.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
+using ProtoBuf.Grpc.Server;
 using System.Linq;
 
 namespace BlazorGrpcCodeFirst.Server
@@ -14,6 +17,10 @@ namespace BlazorGrpcCodeFirst.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+            services.AddCodeFirstGrpc();
+            services.AddGrpcWeb();
+
             services.AddMvc().AddNewtonsoftJson();
             services.AddResponseCompression(opts =>
             {
@@ -36,11 +43,14 @@ namespace BlazorGrpcCodeFirst.Server
             app.UseStaticFiles();
             app.UseClientSideBlazorFiles<Client.Startup>();
 
+            app.UseCors(policy => policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            app.UseGrpcWeb();
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute();
+                endpoints.MapGrpcService<GreeterService>();
                 endpoints.MapFallbackToClientSideBlazor<Client.Startup>("index.html");
             });
         }

@@ -23,8 +23,8 @@ namespace GrpcCodeFirst
                     webBuilder.UseStartup<Startup>();
                     webBuilder.ConfigureKestrel(o =>
                     {
-                        o.ListenAnyIP(5001, o => o.Protocols = HttpProtocols.Http2); //http2 listener for grpc
-                        o.ListenAnyIP(5002, o => o.Protocols = HttpProtocols.Http1); //use a seperate http1 listener for the grpcwebproxy
+                        o.ListenAnyIP(5001, listenOpt => listenOpt.Protocols = HttpProtocols.Http2); //http2 listener for grpc
+                        o.ListenAnyIP(5002, listenOpt => listenOpt.Protocols = HttpProtocols.Http1); //use a seperate http1 listener for the grpcwebproxy
                     });
                 });
     }

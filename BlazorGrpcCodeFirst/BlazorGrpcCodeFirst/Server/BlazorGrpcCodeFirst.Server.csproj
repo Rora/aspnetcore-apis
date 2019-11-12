@@ -8,11 +8,17 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="3.0.0-preview9.19424.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview9.19424.4" />
+    <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.13" />
+    <PackageReference Include="Knowit.Grpc.Web" Version="0.9.37" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Client\BlazorGrpcCodeFirst.Client.csproj" />
     <ProjectReference Include="..\Shared\BlazorGrpcCodeFirst.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

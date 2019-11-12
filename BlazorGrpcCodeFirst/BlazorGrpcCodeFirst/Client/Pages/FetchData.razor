@@ -1,46 +1,34 @@
 ﻿@page "/fetchdata"
 @using BlazorGrpcCodeFirst.Shared
+@using ProtoBuf.Grpc.Client;
+@using ProtoBuf.Grpc.Configuration;
+@using BlazorGrpcCodeFirst.Client.GrpcUtils;
 @inject HttpClient Http
 
 <h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
-@if (forecasts == null)
+@if (welcomeText == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var forecast in forecasts)
-            {
-                <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <p><em>@welcomeText</em></p>
 }
 
 @code {
-    WeatherForecast[] forecasts;
+    string welcomeText = null;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetJsonAsync<WeatherForecast[]>("WeatherForecast");
+        GrpcClientFactory.AllowUnencryptedHttp2 = true;
+        var grpcWebCallInvoker = new GrpcWebCallInvoker(Http);
+
+        var calculator = ClientFactory.Default.CreateClient<IGreeterService>(grpcWebCallInvoker);
+        var result = await calculator.SayHelloAsync(new HelloRequest { Name = "Rob from Blazor via GrpcWeb" });
+        welcomeText = result.Message;
     }
 
 }

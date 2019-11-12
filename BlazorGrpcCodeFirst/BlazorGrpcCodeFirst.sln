@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorGrpcCodeFirst.Client"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorGrpcCodeFirst.Shared", "BlazorGrpcCodeFirst\Shared\BlazorGrpcCodeFirst.Shared.csproj", "{0532FB90-39C9-4C0D-96E9-DADE1EA870D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcWebTest", "GrpcWebTest\GrpcWebTest.csproj", "{EC553986-BF4F-4D03-898C-2BCD2CA40B6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0532FB90-39C9-4C0D-96E9-DADE1EA870D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0532FB90-39C9-4C0D-96E9-DADE1EA870D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0532FB90-39C9-4C0D-96E9-DADE1EA870D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC553986-BF4F-4D03-898C-2BCD2CA40B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC553986-BF4F-4D03-898C-2BCD2CA40B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC553986-BF4F-4D03-898C-2BCD2CA40B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC553986-BF4F-4D03-898C-2BCD2CA40B6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
