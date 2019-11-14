@@ -1,4 +1,5 @@
-﻿using Grpc.Net.Client;
+﻿using Grpc.Core;
+using Grpc.Net.Client;
 using GrpcCodeFirst.Abstractions;
 using ProtoBuf.Grpc.Client;
 using System;
@@ -11,7 +12,7 @@ namespace GrpcCodeFirst.Client.NetCore30
         static async Task Main(string[] args)
         {
             GrpcClientFactory.AllowUnencryptedHttp2 = true;
-            using (var channel = GrpcChannel.ForAddress("http://localhost:5001"))
+            using (var channel = GrpcChannel.ForAddress("http://localhost:5001", new GrpcChannelOptions { Credentials = ChannelCredentials.Insecure }))
             {
                 var calculator = channel.CreateGrpcService<IGreeterService>();
                 var result = await calculator.SayHelloAsync(new HelloRequest { Name = "Rob from netcore 3.0" });
