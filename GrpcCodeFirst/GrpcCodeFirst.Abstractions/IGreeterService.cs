@@ -10,5 +10,7 @@ namespace GrpcCodeFirst.Abstractions
     public interface IGreeterService
     {
         ValueTask<HelloReply> SayHelloAsync(HelloRequest request);
+
+        ValueTask<CollectionResponseTestResponse> CollectionResponseTestAsync(CollectionResponseTestRequest request);
     }
 }

@@ -23,5 +23,18 @@ namespace GrpcCodeFirst
                 Message = "Hello " + request.Name
             });
         }
+
+        public ValueTask<CollectionResponseTestResponse> CollectionResponseTestAsync(CollectionResponseTestRequest request)
+        {
+            //Do note that protobuf can't distinguish between an empty list and NULL since it doesn't support NULL. 
+            //Sending an empty list will result in a NULL when deserializing
+            return new ValueTask<CollectionResponseTestResponse>(new CollectionResponseTestResponse
+            {
+                Rows = new List<CollectionResponseTestRow>()
+                {
+                    new CollectionResponseTestRow { Name = "test" }
+                }
+            });
+        }
     }
 }

@@ -25,6 +25,7 @@ namespace GrpcCodeFirst.Client.GrpcWeb
             var result = await calculator.SayHelloAsync(new HelloRequest { Name = "Rob from GrpcWeb" });
             Console.WriteLine(result.Message);
 
+            var result2 = await calculator.CollectionResponseTestAsync(new CollectionResponseTestRequest());
             Console.WriteLine("Press enter to exit");
             Console.ReadLine();
         }
