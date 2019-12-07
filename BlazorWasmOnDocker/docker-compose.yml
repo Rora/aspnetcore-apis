@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  blazorwasmondocker.server:
+    image: ${DOCKER_REGISTRY-}blazorwasmondockerserver
+    build:
+      context: .
+      dockerfile: BlazorWasmOnDocker/Server/Dockerfile
