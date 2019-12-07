@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  blazorwasmondocker.server:
+    environment:
+      - CLIENT_APP_ASSEMBLY_PATH_OVERRIDE=/Client
+    volumes:
+      - ./BlazorWasmOnDocker/Client:/Client
